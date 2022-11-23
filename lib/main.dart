@@ -1,5 +1,6 @@
 import 'package:cook_fast/pages/first%20page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 void main(){
   runApp(Myapp());
 }
@@ -8,12 +9,15 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      routes: {
-        "/":(context)=>FirstPage(),
-        "First Page":(context)=>FirstPage(),
-      },
+    return ScreenUtilInit(
+      builder: (BuildContext context, Widget? child) => MaterialApp(
+        routes: {
+          "/":(context)=>FirstPage(),
+          "First Page":(context)=>FirstPage(),
+        },
 
+      ),
+      designSize: const Size(360, 640),
     );
   }
 }
