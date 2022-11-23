@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "941044352236",
+    "project_id": "cook-fast-276ba",
+    "storage_bucket": "cook-fast-276ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941044352236:android:cd323c1d9b7d72537f91c9",
+        "android_client_info": {
+          "package_name": "com.example.cook_fast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "941044352236-dvar2tva4jrk0e5r9gdi83aq8v8pn4ga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSmTL32ZmnaaMKosOLTaGjCoQoL_9IuxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "941044352236-dvar2tva4jrk0e5r9gdi83aq8v8pn4ga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
