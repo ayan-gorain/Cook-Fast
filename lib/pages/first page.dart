@@ -6,12 +6,12 @@ class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.lightGreen,
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 90,),
-            Center(child: Image(image: AssetImage("assets/images/1 page.jpg"),height: 250.h,)),
+            SizedBox(height: 50,),
+            Center(child: Image(image: AssetImage("assets/images/ee.png"),height: 250.h,)),
             SizedBox(height: 30,),
             Stack(
               children:[
@@ -39,8 +39,8 @@ class FirstPage extends StatelessWidget {
                     ),
                   ),
                   child: Column(
-                    children: [
-                      SizedBox(height: 60,),
+                    children : [
+                      SizedBox(height: 40,),
                       Padding(
                         padding: const EdgeInsets.only(left: 55),
                         child: Row(
@@ -50,8 +50,26 @@ class FirstPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(height: 30,),
-                      // Text("to Cook Fast",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w400),),
+                      SizedBox(height: 10,),
+                      Text(" To",style: TextStyle(fontSize: 40,fontWeight: FontWeight.w700,fontFamily: 'PTSerif'),),
+                      SizedBox(height: 10,),
+                      Text(" Cook Fast",style: TextStyle(fontSize: 40,fontWeight: FontWeight.w700,fontFamily: 'PTSerif'),),
+                      SizedBox(height: 20,),
+                      ElevatedButton.icon(
+                          onPressed: (){},
+                          icon: Icon(Icons.person_outline,
+                          ), label:Text(""),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.green,
+                          // side: BorderSide(color: Colors.yellow, width: 5),
+                          textStyle: const TextStyle(
+                              color: Colors.white, fontSize: 25, fontStyle: FontStyle.normal),
+                          shape: BeveledRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(10))),
+                          shadowColor: Colors.lightBlue,
+                        ),
+                      ),
+
                     ],
                   ),
                 ),
