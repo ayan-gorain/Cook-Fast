@@ -39,7 +39,7 @@ class FirstPage extends StatelessWidget {
                   ),
                   child: Column(
                     children : [
-                      SizedBox(height: 80,),
+                      SizedBox(height: 75,),
                       Padding(
                         padding: const EdgeInsets.only(left: 100),
                         child: Row(
@@ -57,7 +57,7 @@ class FirstPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 300),
                         child: FloatingActionButton(
-                          child: Icon(Icons.arrow_right_sharp,color: Colors.green,size: 60,),
+                          child: Icon(Icons.arrow_right_sharp,color: Colors.green,size: 30,),
                           backgroundColor: Colors.white,
                           foregroundColor: Colors.white,
                           onPressed: () {
