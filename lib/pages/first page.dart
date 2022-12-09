@@ -1,3 +1,4 @@
+import 'package:cook_fast/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class FirstPage extends StatelessWidget {
@@ -6,19 +7,18 @@ class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightGreen,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(height: 50,),
-            Center(child: Image(image: AssetImage("assets/images/ee.png"),height: 250.h,)),
+            Image.asset('assets/images/1stpage.png'),
             SizedBox(height: 30,),
             Stack(
               children:[
               Container(
                 height: 700.h,
                 width: 300.sh,
-
                 decoration: BoxDecoration(
                   color: Colors.greenAccent,
                   borderRadius: BorderRadius.only(
@@ -26,7 +26,6 @@ class FirstPage extends StatelessWidget {
                    // topLeft: Radius.circular(70),
                   ),
                 ),
-
               ),
                 Container(
                   height: 700.h,
@@ -40,9 +39,9 @@ class FirstPage extends StatelessWidget {
                   ),
                   child: Column(
                     children : [
-                      SizedBox(height: 40,),
+                      SizedBox(height: 80,),
                       Padding(
-                        padding: const EdgeInsets.only(left: 55),
+                        padding: const EdgeInsets.only(left: 100),
                         child: Row(
                           children: [
                             Text("W",style: TextStyle(fontSize: 60,fontWeight: FontWeight.w700,fontFamily: 'PTSerif'),),
@@ -54,26 +53,22 @@ class FirstPage extends StatelessWidget {
                       Text(" To",style: TextStyle(fontSize: 40,fontWeight: FontWeight.w700,fontFamily: 'PTSerif'),),
                       SizedBox(height: 10,),
                       Text(" Cook Fast",style: TextStyle(fontSize: 40,fontWeight: FontWeight.w700,fontFamily: 'PTSerif'),),
-                      SizedBox(height: 20,),
-                      ElevatedButton.icon(
-                          onPressed: (){},
-                          icon: Icon(Icons.person_outline,
-                          ), label:Text(""),
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.green,
-                          // side: BorderSide(color: Colors.yellow, width: 5),
-                          textStyle: const TextStyle(
-                              color: Colors.white, fontSize: 25, fontStyle: FontStyle.normal),
-                          shape: BeveledRectangleBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10))),
-                          shadowColor: Colors.lightBlue,
+
+                      Padding(
+                        padding: const EdgeInsets.only(left: 300),
+                        child: FloatingActionButton(
+                          child: Icon(Icons.arrow_right_sharp,color: Colors.green,size: 60,),
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.white,
+                          onPressed: () {
+                            Navigator.pushNamed(context,MyRoutes.signupRoute);
+                          },
                         ),
                       ),
 
                     ],
                   ),
                 ),
-
         ]
             )
 

@@ -1,4 +1,5 @@
 import 'package:cook_fast/pages/first%20page.dart';
+import 'package:cook_fast/pages/loginsignup.dart';
 import 'package:cook_fast/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,6 +16,7 @@ class Myapp extends StatelessWidget {
         routes: {
           "/":(context)=>FirstPage(),
           MyRoutes.FirstPageRoute:(context)=>FirstPage(),
+          MyRoutes.signupRoute:(context)=>signup(),
         },
 
       ),
