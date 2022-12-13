@@ -1,9 +1,10 @@
+import 'package:cook_fast/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class signup extends StatelessWidget {
-  const signup({Key? key}) : super(key: key);
+class loginsignup extends StatelessWidget {
+  const loginsignup({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,7 @@ class signup extends StatelessWidget {
                       minWidth:350,
                       height: 60,
                       onPressed: () {
-                       // Navigator.pushNamed(context, Myroutes.signupRoute );
+                        Navigator.pushNamed(context, MyRoutes.loginRoute );
                       },
                       color: Colors.yellow,
                       shape: RoundedRectangleBorder(
@@ -74,7 +75,7 @@ class signup extends StatelessWidget {
                       minWidth:350,
                       height: 60,
                       onPressed: () {
-                       // Navigator.pushNamed(context, Myroutes.signupRoute );
+                        Navigator.pushNamed(context, MyRoutes.signupRoute );
                       },
                       color: Colors.yellow,
                       shape: RoundedRectangleBorder(

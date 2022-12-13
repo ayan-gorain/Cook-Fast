@@ -61,7 +61,7 @@ class FirstPage extends StatelessWidget {
                           backgroundColor: Colors.white,
                           foregroundColor: Colors.white,
                           onPressed: () {
-                            Navigator.pushNamed(context,MyRoutes.signupRoute);
+                            Navigator.pushNamed(context,MyRoutes.loginsignupRoute);
                           },
                         ),
                       ),
