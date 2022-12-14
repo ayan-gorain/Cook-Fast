@@ -1,5 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
+
+import '../utils/routes.dart';
+import 'onboarding.dart';
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);
 
@@ -8,7 +12,11 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
+  late String _email,_password;
   bool _isHidden = true;
+  final auth=FirebaseAuth.instance;
+
+  final _formKey=GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +50,17 @@ class _loginState extends State<login> {
 
                   Padding(
                     padding: const EdgeInsets.only(left: 30,right: 30),
-                    child: TextField(
+                    child: TextFormField(
+                      validator: (value){
+                        if(value!.isEmpty){
+                          return "email cannot be empty";
+                        }
+                        return null;
+
+                      },
+                      onChanged: (value){
+                        _email=value.trim();
+                      },
                       decoration: InputDecoration(
                         prefixIcon : Icon(Icons.mail_outline),
                         border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -58,6 +76,9 @@ class _loginState extends State<login> {
                   Padding(
                     padding: const EdgeInsets.only(left: 30,right: 30),
                     child: TextFormField(
+                      onChanged: (value){
+                        _password=value.trim();
+                      },
                       obscureText: _isHidden,
                       decoration: InputDecoration(
 
@@ -99,8 +120,21 @@ class _loginState extends State<login> {
                     child: MaterialButton(
                       minWidth:250,
                       height: 60,
-                      onPressed: () {
-                       // Navigator.pushNamed(context, MyRoutes.otpRoute );
+                      onPressed: () async {
+                        try {
+                          final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+                              email: _email,
+                              password: _password
+                        );
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>onboa()));
+                        } on FirebaseAuthException catch (e) {
+                          if (e.code == 'user-not-found') {
+                            print('No user found for that email.');
+                          } else if (e.code == 'wrong-password') {
+                            print('Wrong password provided for that user.');
+                          }
+                        }
+
                       },
                       color: Colors.white,
                       shape: RoundedRectangleBorder(
@@ -112,6 +146,21 @@ class _loginState extends State<login> {
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                           )),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 140),
+                    child: TextButton(onPressed: () {
+
+                     // Navigator.pushNamed(context, Myroutes.forgetpasswordRoute);
+                    },
+                      child: Text(
+                          '  Forgot password?',
+                          style: TextStyle(
+                              inherit: true,
+                              fontSize: 17,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400)),
                     ),
                   ),
 

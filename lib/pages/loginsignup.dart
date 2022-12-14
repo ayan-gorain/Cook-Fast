@@ -3,11 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class loginsignup extends StatelessWidget {
+class loginsignup extends StatefulWidget {
   const loginsignup({Key? key}) : super(key: key);
 
   @override
+  State<loginsignup> createState() => _loginsignupState();
+
+}
+
+class _loginsignupState extends State<loginsignup> {
+  @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.yellow,
       body: SingleChildScrollView(
