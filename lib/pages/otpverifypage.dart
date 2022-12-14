@@ -1,8 +1,12 @@
 import 'package:cook_fast/utils/routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class otp extends StatefulWidget {
   const otp({Key? key}) : super(key: key);
+
+
+  static String verify="";
 
   @override
   State<otp> createState() => _otpState();
@@ -10,6 +14,7 @@ class otp extends StatefulWidget {
 
 class _otpState extends State<otp> {
   TextEditingController countrycode=TextEditingController();
+  var phone='';
 
   @override
   void initState() {
@@ -58,6 +63,10 @@ class _otpState extends State<otp> {
                      SizedBox(width: 10,),
                      Expanded(
                        child: TextField(
+                         keyboardType: TextInputType.phone,
+                         onChanged: (value){
+                           phone=value;
+                         },
                          decoration: InputDecoration(border: InputBorder.none,hintText: "Phone"),
                        ),
                      ),
@@ -69,8 +78,20 @@ class _otpState extends State<otp> {
               MaterialButton(
                 minWidth:210,
                 height: 50,
-                onPressed: () {
-                  Navigator.pushNamed(context, MyRoutes.verifyRoute );
+                onPressed: () async {
+                  await FirebaseAuth.instance.verifyPhoneNumber(
+                    timeout: const Duration(seconds: 60),
+                    phoneNumber: '${countrycode.text+phone}',
+                    verificationCompleted: (PhoneAuthCredential credential) {},
+                    verificationFailed: (FirebaseAuthException e) {},
+                    codeSent: (String verificationId, int? resendToken) {
+                      otp.verify=verificationId;
+                      Navigator.pushNamed(context, MyRoutes.verifyRoute );
+                    },
+                    codeAutoRetrievalTimeout: (String verificationId) {},
+                  );
+
+
                 },
                 color: Colors.white,
                 shape: RoundedRectangleBorder(

@@ -1,5 +1,9 @@
+import 'package:cook_fast/pages/otpverifypage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
+
+import '../utils/routes.dart';
 
 class verify extends StatefulWidget {
   const verify({Key? key}) : super(key: key);
@@ -9,6 +13,9 @@ class verify extends StatefulWidget {
 }
 
 class _verifyState extends State<verify> {
+
+
+  final  FirebaseAuth auth=FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     final defaultPinTheme = PinTheme(
@@ -31,6 +38,7 @@ class _verifyState extends State<verify> {
         color: Color.fromRGBO(234, 239, 243, 1),
       ),
     );
+    var code='';
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -61,7 +69,10 @@ class _verifyState extends State<verify> {
             Padding(
               padding: const EdgeInsets.only(left: 30, right: 30),
             child: Pinput(
+              onChanged: (value){
+                code=value;
 
+              },
               submittedPinTheme: submittedPinTheme,
               length: 6,
               showCursor: true,
@@ -74,8 +85,18 @@ class _verifyState extends State<verify> {
             MaterialButton(
               minWidth: 210,
               height: 50,
-              onPressed: () {
-               // Navigator.pushNamed(context, MyRoutes.verifyRoute);
+              onPressed: () async{
+                try{
+                  PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: otp.verify, smsCode: code);
+
+                  // Sign the user in (or link) with the credential
+                  await auth.signInWithCredential(credential);
+                  Navigator.pushNamed(context, MyRoutes.onboaRoute );
+
+                }
+                catch(e){
+                  print("wrong otp");
+                }
               },
               color: Colors.white,
               shape: RoundedRectangleBorder(

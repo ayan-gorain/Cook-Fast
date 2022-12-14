@@ -1,13 +1,17 @@
 import 'package:cook_fast/pages/first%20page.dart';
 import 'package:cook_fast/pages/loginpage.dart';
 import 'package:cook_fast/pages/loginsignup.dart';
+import 'package:cook_fast/pages/onboarding.dart';
 import 'package:cook_fast/pages/otpverifypage.dart';
 import 'package:cook_fast/pages/signup.dart';
 import 'package:cook_fast/pages/verify.dart';
 import 'package:cook_fast/utils/routes.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-void main(){
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(Myapp());
 }
 class Myapp extends StatelessWidget {
@@ -25,6 +29,7 @@ class Myapp extends StatelessWidget {
           MyRoutes.loginRoute:(context)=>login(),
           MyRoutes.otpRoute:(context)=>otp(),
           MyRoutes.verifyRoute:(context)=>verify(),
+          MyRoutes.onboaRoute:(context)=>onboa(),
         },
 
       ),
