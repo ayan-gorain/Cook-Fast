@@ -1,4 +1,5 @@
 import 'package:cook_fast/pages/first%20page.dart';
+import 'package:cook_fast/pages/frogetPass.dart';
 import 'package:cook_fast/pages/loginpage.dart';
 import 'package:cook_fast/pages/loginsignup.dart';
 import 'package:cook_fast/pages/onboarding.dart';
@@ -22,7 +23,7 @@ class Myapp extends StatelessWidget {
     return ScreenUtilInit(
       builder: (BuildContext context, Widget? child) => MaterialApp(
         routes: {
-          "/":(context)=>FirstPage(),
+          "/":(context)=>forgetpass(),
           MyRoutes.FirstPageRoute:(context)=>FirstPage(),
           MyRoutes.loginsignupRoute:(context)=>loginsignup(),
           MyRoutes.signupRoute:(context)=>signup(),
@@ -30,6 +31,7 @@ class Myapp extends StatelessWidget {
           MyRoutes.otpRoute:(context)=>otp(),
           MyRoutes.verifyRoute:(context)=>verify(),
           MyRoutes.onboaRoute:(context)=>onboa(),
+          MyRoutes.forgetpassRoute:(context)=>forgetpass(),
         },
 
       ),

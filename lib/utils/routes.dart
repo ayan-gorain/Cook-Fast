@@ -6,4 +6,5 @@ class MyRoutes{
   static String otpRoute="/otp";
   static String verifyRoute="/verify";
   static String onboaRoute="/onboa";
+  static String forgetpassRoute="/forpass";
 }
