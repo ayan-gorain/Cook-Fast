@@ -12,15 +12,14 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
-  late String _email,_password;
+  late String _email, _password;
   bool _isHidden = true;
-  final auth=FirebaseAuth.instance;
+  final auth = FirebaseAuth.instance;
 
-  final _formKey=GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.lightGreenAccent,
       body: SingleChildScrollView(
@@ -40,30 +39,32 @@ class _loginState extends State<login> {
                 ),
                 child: VStack([
                   Padding(
-                    padding: const EdgeInsets.only(left: 150,top: 10),
-                    child: Text("Login",style: TextStyle(
-                        fontSize: 50,fontWeight: FontWeight.w700,fontFamily: 'PTSerif'
+                    padding: const EdgeInsets.only(left: 150, top: 10),
+                    child: Text("Login", style: TextStyle(
+                        fontSize: 50,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'PTSerif'
                     ),),
                   ),
                   SizedBox(height: 40,),
 
 
                   Padding(
-                    padding: const EdgeInsets.only(left: 30,right: 30),
+                    padding: const EdgeInsets.only(left: 30, right: 30),
                     child: TextFormField(
-                      validator: (value){
-                        if(value!.isEmpty){
+                      validator: (value) {
+                        if (value!.isEmpty) {
                           return "email cannot be empty";
                         }
                         return null;
-
                       },
-                      onChanged: (value){
-                        _email=value.trim();
+                      onChanged: (value) {
+                        _email = value.trim();
                       },
                       decoration: InputDecoration(
-                        prefixIcon : Icon(Icons.mail_outline),
-                        border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                        prefixIcon: Icon(Icons.mail_outline),
+                        border: OutlineInputBorder(borderRadius: BorderRadius
+                            .all(Radius.circular(30.0)),
                           borderSide: BorderSide(color: Colors.blue),),
                         labelText: 'Email',
                         hintText: 'Enter Email here',
@@ -74,15 +75,15 @@ class _loginState extends State<login> {
 
 
                   Padding(
-                    padding: const EdgeInsets.only(left: 30,right: 30),
+                    padding: const EdgeInsets.only(left: 30, right: 30),
                     child: TextFormField(
-                      onChanged: (value){
-                        _password=value.trim();
+                      onChanged: (value) {
+                        _password = value.trim();
                       },
                       obscureText: _isHidden,
                       decoration: InputDecoration(
 
-                        prefixIcon : Icon(Icons.person),
+                        prefixIcon: Icon(Icons.person),
                         labelText: 'Password',
                         border: const OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -103,12 +104,11 @@ class _loginState extends State<login> {
                         ),
                       ),
 
-                      validator: (value){
-                        if(value!.isEmpty){
+                      validator: (value) {
+                        if (value!.isEmpty) {
                           return "Password cannot be empty";
                         }
                         return null;
-
                       },
 
                     ),
@@ -118,15 +118,17 @@ class _loginState extends State<login> {
                   Padding(
                     padding: const EdgeInsets.only(left: 90),
                     child: MaterialButton(
-                      minWidth:250,
+                      minWidth: 250,
                       height: 60,
                       onPressed: () async {
                         try {
-                          final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+                          final credential = await FirebaseAuth.instance
+                              .signInWithEmailAndPassword(
                               email: _email,
                               password: _password
-                        );
-                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>onboa()));
+                          );
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(builder: (context) => onboa()));
                         } on FirebaseAuthException catch (e) {
                           if (e.code == 'user-not-found') {
                             print('No user found for that email.');
@@ -134,7 +136,6 @@ class _loginState extends State<login> {
                             print('Wrong password provided for that user.');
                           }
                         }
-
                       },
                       color: Colors.white,
                       shape: RoundedRectangleBorder(
@@ -151,8 +152,7 @@ class _loginState extends State<login> {
                   Padding(
                     padding: const EdgeInsets.only(left: 140),
                     child: TextButton(onPressed: () {
-
-                     // Navigator.pushNamed(context, Myroutes.forgetpasswordRoute);
+                      // Navigator.pushNamed(context, Myroutes.forgetpasswordRoute);
                     },
                       child: Text(
                           '  Forgot password?',
