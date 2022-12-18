@@ -23,7 +23,7 @@ class Myapp extends StatelessWidget {
     return ScreenUtilInit(
       builder: (BuildContext context, Widget? child) => MaterialApp(
         routes: {
-          "/":(context)=>forgetpass(),
+          "/":(context)=>FirstPage(),
           MyRoutes.FirstPageRoute:(context)=>FirstPage(),
           MyRoutes.loginsignupRoute:(context)=>loginsignup(),
           MyRoutes.signupRoute:(context)=>signup(),
