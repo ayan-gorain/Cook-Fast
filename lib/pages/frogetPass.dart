@@ -92,13 +92,13 @@ class forgetpass extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Add your onPressed code here!
-        },
-        label: const Text('submit'),
-        backgroundColor: Colors.red[400],
-      ),
+      // floatingActionButton: FloatingActionButton.extended(
+      //   onPressed: () {
+      //     // Add your onPressed code here!
+      //   },
+      //   label: const Text('submit'),
+      //   backgroundColor: Colors.red[400],
+      // ),
     );
   }
 }
