@@ -10,73 +10,95 @@ class forgetpass extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red[400],
-
-        title: Text ('Forget Password',
-          style: TextStyle(
-            fontFamily: 'Poppins'
-          ),
+        title: Text(
+          'Forget Password',
+          style: TextStyle(fontFamily: 'Poppins'),
         ),
       ),
-        backgroundColor: Colors.white,
-        body: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  child: Image.asset('assets/images/forPass.png'),
-                  width: 300,
-                ),
-                Text('Please Enter Your Email Address To\n     Recevic a Verification Code',
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              Container(
+                child: Image.asset('assets/images/forPass.png'),
+                width: 300,
+              ),
+
+              SizedBox(height: 50),
+
+              Text(
+                'Please Enter Your Email Address To\n     Recevic a Verification Code',
                 style: TextStyle(
                     color: Colors.teal[900],
                     fontSize: 20,
-                    fontFamily: 'Poppins Pro'
-                ),),
-                SizedBox(height: 30,),
-                Padding(
-                  padding: const EdgeInsets.only(left: 30,right: 30),
-                  child: TextFormField(
-                    validator: (value){
-                      if(value!.isEmpty){
-                        return "email cannot be empty";
-                      }
-                      return null;
+                    fontFamily: 'Poppins Pro'),
+              ),
 
-                    },
-                    //onChanged: (value){
-                   //   _email=value.trim();
-                   // },
-                    decoration: InputDecoration(
-                      prefixIcon : Icon(Icons.mail_outline),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                        borderSide: BorderSide(color: Colors.blue),),
-                      labelText: 'Email',
-                      hintText: 'Enter Email here',
+              SizedBox(height: 35),
+
+              Column(
+                children: [
+                  Text(
+                    'Email Address -',
+                    style: TextStyle(
+                      color: Colors.blueGrey[300],
+                      fontSize: 17,
                     ),
                   ),
-                ),
-                SizedBox(height: 20,),
-                MaterialButton(
-                  minWidth:250,
-                  height: 60,
-                  onPressed: ()  {  },
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                      side: BorderSide(
-                        color: Colors.black,
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 27),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(
+                          Icons.mail,
+                          color: Colors.red[400],
+                        ),
+                        labelText: 'example@gmail.com',
+                        labelStyle: TextStyle(
+                          fontSize: 19,
+                          color: Colors.blueGrey[400],
+                          fontFamily: 'Source Sans Pro',
+                        ),
+                        border: InputBorder.none,
+                        fillColor: Colors.blueGrey[100],
+                        filled: true,
                       ),
-                      borderRadius: BorderRadius.circular(50)),
-                  child: Text("get otp",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                      )),
-                ),
+                      keyboardType: TextInputType.emailAddress,
+                    ),
+                  ),
+                ],
+              ),
 
-
-              ],
-            ),
+              // Container(
+              //     color: Colors.blueGrey[100],
+              //     padding: EdgeInsets.all(0.2),
+              //     margin: EdgeInsets.symmetric(vertical: 10, horizontal: 27),
+              //     child: ListTile(
+              //       leading: Icon(
+              //         Icons.mail,
+              //         color: Colors.red[400],
+              //       ),
+              //       title: Text('example@gmail.com',
+              //           style: TextStyle(
+              //             fontSize: 19,
+              //             color: Colors.blueGrey[400],
+              //             fontFamily: 'Source Sans Pro',
+              //           )
+              //       ),
+              //     )
+              // )
+            ],
           ),
-        ));
+        ),
+      ),
+      // floatingActionButton: FloatingActionButton.extended(
+      //   onPressed: () {
+      //     // Add your onPressed code here!
+      //   },
+      //   label: const Text('submit'),
+      //   backgroundColor: Colors.red[400],
+      // ),
+    );
   }
 }
