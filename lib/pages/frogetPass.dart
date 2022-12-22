@@ -35,7 +35,7 @@ class forgetpass extends StatelessWidget {
                     fontFamily: 'Poppins Pro'),
               ),
 
-              SizedBox(height: 35),
+              SizedBox(height:40 ),
 
               Column(
                 children: [
@@ -46,6 +46,9 @@ class forgetpass extends StatelessWidget {
                       fontSize: 17,
                     ),
                   ),
+
+                  SizedBox(height: 30),
+
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 10, horizontal: 27),
                     child: TextFormField(

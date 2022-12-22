@@ -100,27 +100,26 @@ class _OnboardingpageState extends State<Onboardingpage> {
                 ),
                 primary:Colors.white,
                 backgroundColor: Colors.tealAccent,
-                minimumSize: const Size.fromHeight(80)
+                minimumSize: const Size.fromHeight(65)
             ),
             onPressed: () async{}, child: const Text("Get Started",
             style:TextStyle(fontSize: 24))):
         Container(
-            height:80,
+            height:65,
             child:Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
-
-                    onPressed: ()=>controller.jumpToPage(5),
+                    onPressed: ()=>controller.jumpToPage(3),
                     child: const Text("SKIP")),
                 SmoothPageIndicator(
                   controller: controller,
-                  count:6,
+                  count:3,
                   axisDirection: Axis.horizontal,
                   effect: JumpingDotEffect(
-                    dotHeight: 16,
-                    dotWidth: 16,
-                    jumpScale: .7,
+                    dotHeight: 13,
+                    dotWidth: 13,
+                    jumpScale: 0.7,
                     verticalOffset: 15,
                   ),
                   onDotClicked: (index)=>controller.animateToPage(
