@@ -1,11 +1,14 @@
 import 'package:cook_fast/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:cook_fast/Models/recipe_model.dart';
+
 class FirstPage extends StatelessWidget {
   const FirstPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    initRetrivalRecipe();
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
