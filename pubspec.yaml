@@ -41,6 +41,7 @@ dependencies:
   get: ^4.6.5
   smooth_page_indicator: ^1.0.0+2
   curved_navigation_bar: ^1.0.3
+  carousel_slider: ^4.2.1
 
 
   firebase_core: ^2.4.0
@@ -96,6 +97,11 @@ flutter:
     - family: SecularOne
       fonts:
         - asset: assets/fonts/SecularOne-Regular.ttf
+    - family: Dancing
+      fonts:
+        - asset: assets/fonts/dancing.ttf
+          weight: 700
+          style: italic
 
 
   #
