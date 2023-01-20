@@ -61,7 +61,7 @@ class _OnboardingpageState extends State<Onboardingpage> {
             child: PageView(
               controller: controller,
               onPageChanged: (index){
-                setState(() =>isLastPage=index==3);
+                setState(() =>isLastPage=index==2);
               },
               children: [
 
@@ -74,14 +74,14 @@ class _OnboardingpageState extends State<Onboardingpage> {
                 ),buildPage(
                     color: Colors.white60,
                     title: "Recipy Finder",
-                    urlImage: 'assets/images/ttt.jpg',
+                    urlImage: 'assets/images/eeeu.jpg',
 
                     subtitle: ""
                 ),
                 buildPage(
                     color: Colors.white,
                     title: "",
-                    urlImage: 'assets/images/r3.webp',
+                    urlImage: 'assets/images/yryrg.jpg',
 
                     subtitle: ""
                 ),
@@ -111,11 +111,11 @@ class _OnboardingpageState extends State<Onboardingpage> {
               children: [
                 TextButton(
 
-                    onPressed: ()=>controller.jumpToPage(5),
+                    onPressed: ()=>controller.jumpToPage(3),
                     child: const Text("SKIP")),
                 SmoothPageIndicator(
                   controller: controller,
-                  count:6,
+                  count:3,
                   axisDirection: Axis.horizontal,
                   effect: JumpingDotEffect(
                     dotHeight: 16,

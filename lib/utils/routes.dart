@@ -8,4 +8,5 @@ class MyRoutes{
   static String onboaRoute="/onboa";
   static String forgetpassRoute="/forpass";
   static String welcoRoute="/welco";
+  static String FilterRoute="/welco";
 }
