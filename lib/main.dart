@@ -1,3 +1,4 @@
+import 'package:cook_fast/pages/bmi/bmipage.dart';
 import 'package:cook_fast/pages/first%20page.dart';
 import 'package:cook_fast/pages/fliterpage.dart';
 import 'package:cook_fast/pages/frogetPass.dart';
@@ -36,6 +37,7 @@ class Myapp extends StatelessWidget {
           MyRoutes.forgetpassRoute:(context)=>forgetpass(),
           MyRoutes.welco11Route:(context)=>welco(),
           MyRoutes.FilterRoute:(context)=>filter(),
+          MyRoutes.HomeScreenRoute:(context)=>HomeScreen(),
         },
 
       ),

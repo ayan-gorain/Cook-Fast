@@ -9,4 +9,5 @@ class MyRoutes{
   static String forgetpassRoute="/forpass";
   static String welco11Route="/welco";
   static String FilterRoute="/fil";
+  static String HomeScreenRoute="/bmi";
 }

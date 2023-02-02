@@ -131,7 +131,7 @@ class _welcoState extends State<welco> {
               minWidth:160,
               height: 70,
               onPressed: () {
-                // Navigator.pushNamed(context, Myroutes.shopnameRoute);
+                 Navigator.pushNamed(context, MyRoutes.HomeScreenRoute);
               },
               color: Colors.white,
               shape: RoundedRectangleBorder(
