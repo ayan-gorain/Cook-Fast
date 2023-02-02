@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../utils/routes.dart';
+
 class Onboardingpage extends StatefulWidget {
   const Onboardingpage({Key? key}) : super(key: key);
 
@@ -102,7 +104,9 @@ class _OnboardingpageState extends State<Onboardingpage> {
                 backgroundColor: Colors.tealAccent,
                 minimumSize: const Size.fromHeight(80)
             ),
-            onPressed: () async{}, child: const Text("Get Started",
+            onPressed: () async{
+              Navigator.pushNamed(context,MyRoutes.welco11Route);
+            }, child: const Text("Get Started",
             style:TextStyle(fontSize: 24))):
         Container(
             height:80,

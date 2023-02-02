@@ -1,5 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cook_fast/utils/routes.dart';
 import 'package:flutter/material.dart';
+
+
 
 class welco extends StatefulWidget {
   const welco({Key? key}) : super(key: key);
@@ -91,7 +94,7 @@ class _welcoState extends State<welco> {
                   minWidth:160,
                   height: 70,
                   onPressed: () {
-                   // Navigator.pushNamed(context, Myroutes.shopnameRoute);
+                    // Navigator.pushNamed(context, MyRoutes.FilterRoute);
                   },
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
@@ -108,7 +111,7 @@ class _welcoState extends State<welco> {
                   minWidth:160,
                   height: 70,
                   onPressed: () {
-                   // Navigator.pushNamed(context, Myroutes.shopnameRoute);
+                    Navigator.pushNamed(context, MyRoutes.FilterRoute);
                   },
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
@@ -145,6 +148,6 @@ class _welcoState extends State<welco> {
           ],
         ),
       ),
-    );
+    );;
   }
 }
