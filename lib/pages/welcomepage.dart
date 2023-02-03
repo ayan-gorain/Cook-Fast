@@ -1,7 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cook_fast/utils/routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'loginsignup.dart';
 
 
 
@@ -17,7 +21,54 @@ class _welcoState extends State<welco> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: Row(children: [
+                Text("   Hi, ", style: TextStyle(
+                    fontSize: 45,fontWeight: FontWeight.bold
+                ),),
+                SizedBox(height: 10,),
+                StreamBuilder(
+                    stream: FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser!.uid).snapshots(),
+                    builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+                      if (!snapshot.hasData) {
+                        return Text("Loading");
+                      }
+                      var userDocument = snapshot.data;
+                      return Text(userDocument!["name"],style: TextStyle(
+                          fontSize: 30,fontWeight: FontWeight.bold
+                      ),);
+                    }
+                ),
+              ],),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+            ),
+            ListTile(
+              title: Text('About us',style: TextStyle(
+                fontSize: 20,fontWeight: FontWeight.bold
+              ),),
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.aboutusRoute );
+              },
+            ),
+            ListTile(
+              title: Text('Log Out',style: TextStyle(
+    fontSize: 20,fontWeight: FontWeight.bold
+    ),),
+              onTap: () async {
+                await FirebaseAuth.instance.signOut();
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (context) =>loginsignup()));
+              },
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.greenAccent,
       ),

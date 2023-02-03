@@ -11,4 +11,5 @@ class MyRoutes{
   static String FilterRoute="/fil";
   static String HomeScreenRoute="/bmi";
   static String recfinRoute="/recfin";
+  static String aboutusRoute="/aboutus";
 }

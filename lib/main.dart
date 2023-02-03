@@ -1,4 +1,5 @@
 import 'package:cook_fast/pages/bmi/bmipage.dart';
+import 'package:cook_fast/pages/drawer/aboutus.dart';
 import 'package:cook_fast/pages/find%20recipy/views/home.dart';
 import 'package:cook_fast/pages/first%20page.dart';
 import 'package:cook_fast/pages/fliterpage.dart';
@@ -27,7 +28,7 @@ class Myapp extends StatelessWidget {
     return ScreenUtilInit(
       builder: (BuildContext context, Widget? child) => MaterialApp(
         routes: {
-          "/":(context)=>welco(),
+          "/":(context)=> FirstPage(),
           MyRoutes.FirstPageRoute:(context)=>FirstPage(),
           MyRoutes.loginsignupRoute:(context)=>loginsignup(),
           MyRoutes.signupRoute:(context)=>signup(),
@@ -40,6 +41,7 @@ class Myapp extends StatelessWidget {
           MyRoutes.FilterRoute:(context)=>filter(),
           MyRoutes.HomeScreenRoute:(context)=>HomeScreen(),
           MyRoutes.recfinRoute:(context)=>recfin(),
+          MyRoutes.aboutusRoute:(context)=>aboutus(),
         },
 
       ),
