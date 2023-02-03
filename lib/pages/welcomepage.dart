@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cook_fast/utils/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 
@@ -84,7 +85,7 @@ class _welcoState extends State<welco> {
               ),),
             SizedBox(height: 30,),
             Text("Cook Fast",style: TextStyle(
-              fontSize: 90,fontWeight: FontWeight.w700,fontFamily: 'Dancing',
+              fontSize: 90.w,fontWeight: FontWeight.w700,fontFamily: 'Dancing',
             ),),
             SizedBox(height: 30,),
             Row(
@@ -94,7 +95,7 @@ class _welcoState extends State<welco> {
                   minWidth:160,
                   height: 70,
                   onPressed: () {
-                    // Navigator.pushNamed(context, MyRoutes.FilterRoute);
+                    Navigator.pushNamed(context, MyRoutes.recfinRoute);
                   },
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
