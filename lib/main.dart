@@ -1,16 +1,18 @@
 import 'package:cook_fast/pages/bmi/bmipage.dart';
 import 'package:cook_fast/pages/drawer/aboutus.dart';
 import 'package:cook_fast/pages/find%20recipy/views/home.dart';
-import 'package:cook_fast/pages/first%20page.dart';
-import 'package:cook_fast/pages/fliterpage.dart';
-import 'package:cook_fast/pages/frogetPass.dart';
-import 'package:cook_fast/pages/loginpage.dart';
-import 'package:cook_fast/pages/loginsignup.dart';
-import 'package:cook_fast/pages/onboarding.dart';
-import 'package:cook_fast/pages/otpverifypage.dart';
-import 'package:cook_fast/pages/signup.dart';
-import 'package:cook_fast/pages/verify.dart';
-import 'package:cook_fast/pages/welcomepage.dart';
+import 'package:cook_fast/pages/common%20page/first%20page.dart';
+import 'package:cook_fast/pages/what%20in%20fridge/fliterpage.dart';
+import 'package:cook_fast/pages/common%20page/frogetPass.dart';
+import 'package:cook_fast/pages/common%20page/loginpage.dart';
+import 'package:cook_fast/pages/common%20page/loginsignup.dart';
+import 'package:cook_fast/pages/common%20page/onboarding.dart';
+import 'package:cook_fast/pages/common%20page/otpverifypage.dart';
+import 'package:cook_fast/pages/common%20page/signup.dart';
+import 'package:cook_fast/pages/common%20page/verify.dart';
+import 'package:cook_fast/pages/common%20page/welcomepage.dart';
+import 'package:cook_fast/pages/what%20in%20fridge/homepage1.dart';
+import 'package:cook_fast/pages/what%20in%20fridge/yyy.dart';
 import 'package:cook_fast/utils/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -42,6 +44,8 @@ class Myapp extends StatelessWidget {
           MyRoutes.HomeScreenRoute:(context)=>HomeScreen(),
           MyRoutes.recfinRoute:(context)=>recfin(),
           MyRoutes.aboutusRoute:(context)=>aboutus(),
+         // MyRoutes.home2Route:(context)=>home2(),
+         // MyRoutes.gtaaaRoute:(context)=>gtaaa(),
         },
 
       ),

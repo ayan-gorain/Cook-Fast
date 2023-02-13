@@ -1,9 +1,14 @@
+import 'package:cook_fast/Models/recipe_model.dart';
+import 'package:cook_fast/pages/what%20in%20fridge/homepage1.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:multi_select_flutter/dialog/multi_select_dialog_field.dart';
 
-import '../Models/recipy_chossing.dart';
-import '../Models/recipy_controller.dart';
+import '../../Models/recipy_chossing.dart';
+import '../../Models/recipy_controller.dart';
+import '../../utils/routes.dart';
+
+
 
 class filter extends StatelessWidget {
   filter({Key? key}) : super(key: key);
@@ -13,6 +18,8 @@ class filter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List subjectData = [];
+    List ingName = [];
+
 
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       controller.getSubjectData();
@@ -61,15 +68,18 @@ class filter extends StatelessWidget {
                   ),
                   onConfirm: (results) {
                     subjectData = [];
+                    ingName = [];
                     for (var i = 0; i < results.length; i++) {
                       SubjectModel data = results[i] as SubjectModel;
-                      print(data.subjectId);
-                      print(data.subjectName);
+                     // print(data.subjectId);
+                     // print(data.subjectName);
+                      ingName.add(data.subjectName);
+
                       subjectData.add(data.subjectId);
                     }
                     print("data $subjectData");
+                    print("final $ingName");
 
-                    //_selectedAnimals = results;
                   },
                 ),
               );
@@ -82,7 +92,16 @@ class filter extends StatelessWidget {
                   color: Colors.green,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () async {
+               // Navigator.pushNamed(context,MyRoutes.home2Route);
+                List<RecipeModel> r = await initRetrivalRecipe(ingName);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => home2(
+                            recipeList: r
+                        )));
+              },
             ),
           ],
         ),

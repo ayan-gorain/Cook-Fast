@@ -1,9 +1,9 @@
-import 'package:cook_fast/pages/otpverifypage.dart';
+import 'package:cook_fast/pages/common%20page/otpverifypage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 
-import '../utils/routes.dart';
+import '../../utils/routes.dart';
 
 class verify extends StatefulWidget {
   const verify({Key? key}) : super(key: key);

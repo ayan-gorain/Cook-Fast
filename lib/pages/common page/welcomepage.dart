@@ -28,7 +28,7 @@ class _welcoState extends State<welco> {
             DrawerHeader(
               child: Row(children: [
                 Text("   Hi, ", style: TextStyle(
-                    fontSize: 45,fontWeight: FontWeight.bold
+                    fontSize: 22,fontWeight: FontWeight.bold
                 ),),
                 SizedBox(height: 10,),
                 StreamBuilder(

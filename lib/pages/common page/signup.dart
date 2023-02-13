@@ -1,5 +1,6 @@
 import 'dart:ffi';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,7 +8,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import '../utils/routes.dart';
+import '../../utils/routes.dart';
+import 'otpverifypage.dart';
 
 class signup extends StatefulWidget {
   const signup({Key? key}) : super(key: key);
@@ -18,8 +20,11 @@ class signup extends StatefulWidget {
 }
 
 class _signupState extends State<signup> {
+
+  final FirebaseFirestore db = FirebaseFirestore.instance;
   var email='';
   var password='';
+  late String namee;
   bool _isHidden = true;
 
 
@@ -60,6 +65,9 @@ class _signupState extends State<signup> {
                         labelText: 'Full Name',
                         hintText: 'Enter Name here',
                       ),
+                      onChanged: (value){
+                        namee=value;
+                      },
 
                     ),
                   ),
@@ -129,6 +137,9 @@ class _signupState extends State<signup> {
                       minWidth:250,
                       height: 60,
                       onPressed: ()async {
+                        final data = <String, String>{
+                          "name": namee,
+                        };
                         try {
                           final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
                             email: email,
@@ -143,8 +154,19 @@ class _signupState extends State<signup> {
                         } catch (e) {
                           print(e);
                         }
+                        {
 
-                        Navigator.pushNamed(context, MyRoutes.otpRoute );
+                          await db.collection("users")
+                              .doc(FirebaseAuth.instance.currentUser!.uid)
+                              .set(data)
+                              .onError((e, _) => print("Error writing document: $e"))
+                              .then((value) {
+                            Navigator.of(context).pushReplacement(MaterialPageRoute(
+                                builder: (context) => otp()));
+                          });
+                        }
+
+
                         //Get.snackbar("log in","suce",
                         //snackPosition: SnackPosition.BOTTOM);
                       },

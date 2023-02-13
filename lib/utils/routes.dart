@@ -12,4 +12,6 @@ class MyRoutes{
   static String HomeScreenRoute="/bmi";
   static String recfinRoute="/recfin";
   static String aboutusRoute="/aboutus";
+  //static String home2Route="/home2";
+  //static String gtaaaRoute="/gtaaa";
 }

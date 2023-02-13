@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import '../utils/routes.dart';
+import '../../utils/routes.dart';
 import 'onboarding.dart';
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);

@@ -8,6 +8,7 @@ var firebaseUser = FirebaseAuth.instance.currentUser;
 
 RecipeModel recipeInfo = RecipeModel("Dummy Recipe Name", "Procedure", []);
 List<RecipeModel> recipes = [];
+List<RecipeModel> recipesFound = [];
 
 class RecipeModel {
   String recipeName;
@@ -41,27 +42,33 @@ Future<List<RecipeModel>> getRecipe() async {
 
 }
 
-initRetrivalRecipe() async {
+initRetrivalRecipe(availableIngredients) async {
+  recipesFound = [];
+  print("you : $availableIngredients ");
   recipes = await getRecipe();
-
-  List availableIngredients = [];
-
-  availableIngredients.add("cucumber");
-  availableIngredients.add("bread");
-  availableIngredients.add("tomato");
-
-
-
+  print(recipes[1].ingredients);
+  print(availableIngredients);
   Function eq = const ListEquality().equals;
-  print(eq(recipes[1].ingredients, availableIngredients));
-  for (int i = 0; i < availableIngredients.length-1; i++)
+  Function deepEq =  const DeepCollectionEquality.unordered().equals;
+  print(deepEq(recipes[1].ingredients, availableIngredients));
+
+  List recipes1 = [];
+
+  for (int i = 0; i < recipes.length; i++)
     {
 
-      if(eq(recipes[i].ingredients, availableIngredients))
+      if(deepEq(recipes[i].ingredients, availableIngredients))
         {
           print("Dish Name : ;${recipes[i].recipeName}\nRecipe : ${recipes[i].procedure}");
+          recipes1.add("${recipes[i].recipeName} | ${recipes[i].procedure}");
+          recipesFound.add(RecipeModel(recipes[i].recipeName, recipes[i].procedure, recipes[i].ingredients));
+
+        }
+      else
+        {
+          print("Not this Recipe");
         }
     }
-
-
+  print("Ended $recipes1");
+  return recipesFound;
 }

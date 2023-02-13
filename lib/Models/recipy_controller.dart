@@ -13,16 +13,16 @@ class AppDataController extends GetxController {
 
     Map<String, dynamic> apiResponse = {
       "code": 200,
-      "message": "Course subject lists.",
+      "message": "Recipy lists.",
       "data": [
-        {"subject_id": "1", "subject_name": "Tomato"},
+        {"subject_id": "1", "subject_name": "tomato"},
         {"subject_id": "2", "subject_name": "Bell Paper"},
         {"subject_id": "3", "subject_name": "Broccoli"},
         {"subject_id": "4", "subject_name": "cabbage"},
         {"subject_id": "5", "subject_name": "carrot"},
         {"subject_id": "6", "subject_name": "Cauliflower"},
         {"subject_id": "7", "subject_name": "Chikpeas"},
-        {"subject_id": "8", "subject_name": "Cucumber"},
+        {"subject_id": "8", "subject_name": "cucumber"},
         {"subject_id": "9", "subject_name": "Edamame"},
         {"subject_id": "10", "subject_name": "Eggplant"},
         {"subject_id": "11", "subject_name": "Garlic"},
