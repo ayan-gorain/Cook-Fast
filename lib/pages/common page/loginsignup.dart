@@ -37,13 +37,13 @@ class _loginsignupState extends State<loginsignup> {
                 ),)),
                 SizedBox(height: 40,),
                 Padding(
-                  padding: const EdgeInsets.only(left: 100),
+                  padding: const EdgeInsets.only(left: 70),
                   child: Text("Welcome back",style: TextStyle(
                       fontSize: 30,fontWeight: FontWeight.w700,fontFamily: 'PTSerif'
                   ),),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 90),
+                  padding: const EdgeInsets.only(left: 60),
                   child: Text("You have missed",style: TextStyle(
                       fontSize: 30,fontWeight: FontWeight.w700,fontFamily: 'PTSerif'
                   ),),
@@ -56,9 +56,9 @@ class _loginsignupState extends State<loginsignup> {
                 children: [
                   SizedBox(height: 620,),
                   Padding(
-                    padding: const EdgeInsets.only(left: 30),
+                    padding: const EdgeInsets.only(left: 40),
                     child: MaterialButton(
-                      minWidth:350,
+                      minWidth:300,
                       height: 60,
                       onPressed: () {
                         Navigator.pushNamed(context, MyRoutes.loginRoute );
@@ -77,9 +77,9 @@ class _loginsignupState extends State<loginsignup> {
                   ),
                    SizedBox(height: 20,),
                    Padding(
-                     padding: const EdgeInsets.only(left: 30),
+                     padding: const EdgeInsets.only(left: 10),
                      child: MaterialButton(
-                      minWidth:350,
+                      minWidth:300,
                       height: 60,
                       onPressed: () {
                         Navigator.pushNamed(context, MyRoutes.signupRoute );

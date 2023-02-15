@@ -46,11 +46,11 @@ initRetrivalRecipe(availableIngredients) async {
   recipesFound = [];
   print("you : $availableIngredients ");
   recipes = await getRecipe();
-  print(recipes[1].ingredients);
+  print(recipes[0].ingredients);
   print(availableIngredients);
   Function eq = const ListEquality().equals;
   Function deepEq =  const DeepCollectionEquality.unordered().equals;
-  print(deepEq(recipes[1].ingredients, availableIngredients));
+  print(deepEq(recipes[0].ingredients, availableIngredients));
 
   List recipes1 = [];
 

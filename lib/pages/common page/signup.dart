@@ -50,7 +50,7 @@ class _signupState extends State<signup> {
                 ),
                 child: VStack([
                   Padding(
-                    padding: const EdgeInsets.only(left: 120,top: 10),
+                    padding: const EdgeInsets.only(left: 90,top: 10),
                     child: Text("Sign up",style: TextStyle(
                         fontSize: 50,fontWeight: FontWeight.w700,fontFamily: 'PTSerif'
                     ),),
@@ -132,7 +132,7 @@ class _signupState extends State<signup> {
                   ),
                   SizedBox(height: 20,),
                   Padding(
-                    padding: const EdgeInsets.only(left: 90),
+                    padding: const EdgeInsets.only(left: 50),
                     child: MaterialButton(
                       minWidth:250,
                       height: 60,
@@ -187,7 +187,7 @@ class _signupState extends State<signup> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 120,top: 30),
+              padding: const EdgeInsets.only(left: 90,top: 30),
               child: Image(image: AssetImage('assets/images/signup.png')),
             )
           ],

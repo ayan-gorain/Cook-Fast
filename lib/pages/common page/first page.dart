@@ -13,8 +13,8 @@ class FirstPage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 50,),
-            Image.asset('assets/images/1stpage.png'),
-            SizedBox(height: 30,),
+            Image.asset('assets/images/1stpage.png',height: 300,),
+            SizedBox(height: 20,),
             Stack(
               children:[
               Container(
@@ -42,7 +42,7 @@ class FirstPage extends StatelessWidget {
                     children : [
                       SizedBox(height: 75,),
                       Padding(
-                        padding: const EdgeInsets.only(left: 100),
+                        padding: const EdgeInsets.only(left:70),
                         child: Row(
                           children: [
                             Text("W",style: TextStyle(fontSize: 60,fontWeight: FontWeight.w700,fontFamily: 'PTSerif'),),
@@ -56,7 +56,7 @@ class FirstPage extends StatelessWidget {
                       Text(" Cook Fast",style: TextStyle(fontSize: 40,fontWeight: FontWeight.w700,fontFamily: 'PTSerif'),),
 
                       Padding(
-                        padding: const EdgeInsets.only(left: 300),
+                        padding: const EdgeInsets.only(left: 260,top: 30),
                         child: FloatingActionButton(
                           child: Icon(Icons.arrow_right_sharp,color: Colors.green,size: 30,),
                           backgroundColor: Colors.white,

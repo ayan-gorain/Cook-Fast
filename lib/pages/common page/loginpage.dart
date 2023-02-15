@@ -39,7 +39,7 @@ class _loginState extends State<login> {
                 ),
                 child: VStack([
                   Padding(
-                    padding: const EdgeInsets.only(left: 150, top: 10),
+                    padding: const EdgeInsets.only(left: 120, top: 10),
                     child: Text("Login", style: TextStyle(
                         fontSize: 50,
                         fontWeight: FontWeight.w700,
@@ -116,7 +116,7 @@ class _loginState extends State<login> {
                   ),
                   SizedBox(height: 30,),
                   Padding(
-                    padding: const EdgeInsets.only(left: 90),
+                    padding: const EdgeInsets.only(left: 60),
                     child: MaterialButton(
                       minWidth: 250,
                       height: 60,
@@ -150,7 +150,7 @@ class _loginState extends State<login> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 140),
+                    padding: const EdgeInsets.only(left: 100),
                     child: TextButton(onPressed: () {
                        Navigator.pushNamed(context, MyRoutes.forgetpassRoute);
                     },

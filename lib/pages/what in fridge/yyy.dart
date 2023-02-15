@@ -18,9 +18,23 @@ class gtaaa extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(height: 30,),
-            Text("Name : $recipeName",),
+            Text("Name : $recipeName",
+              textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),),
             SizedBox(height: 30,),
-            Text("$recipeProceedure"),
+            Text("Instructions", textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),),
+            SizedBox(height: 30,),
+            Text("$recipeProceedure", textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 20,
+              ),),
           ],
         ),
       )
